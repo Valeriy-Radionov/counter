@@ -1,0 +1,16 @@
+.wrapper {
+    width: 300px;
+    height: 200px;
+    border-radius: 15px;
+    padding: 10px;
+    border: 3px solid deepskyblue;
+    text-align: center;
+    background: lightslategray;
+}
+
+.buttonWrapper {
+    border-radius: 15px;
+    border: 3px solid deepskyblue;
+    height: 60px;
+    margin: 10px;
+}
