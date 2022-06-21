@@ -4,21 +4,20 @@ import {Button} from "./Button/Button";
 import s from "./Counter.module.css"
 
 type CounterType = {
-    displayState: number
-    disableInc: boolean
-    disableReset: boolean
+    displayValue: number
+    disabledInc: boolean
+    disabledReset: boolean
     callBackCounter: () => void
     resetCallBack: () => void
 }
 
 export const Counter = (props: CounterType) => {
-
     return (
         <div className={s.wrapper}>
-            <Display numberState={props.displayState}/>
+            <Display value={props.displayValue}/>
             <div className={s.buttonWrapper}>
-                <Button name={"inc"} callBack={props.callBackCounter} disable={props.disableInc}/>
-                <Button name={"reset"} callBack={props.resetCallBack} disable={props.disableReset}/>
+                <Button name={"inc"} callBack={props.callBackCounter} disabled={props.disabledInc}/>
+                <Button name={"reset"} callBack={props.resetCallBack} disabled={props.disabledReset}/>
             </div>
         </div>
     )

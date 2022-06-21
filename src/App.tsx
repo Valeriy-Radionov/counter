@@ -2,40 +2,29 @@ import React, {useState} from 'react';
 import './App.css';
 import {Counter} from "./components/Counter/Counter";
 
-function App() {
+export const minValue = 0
+export const maxValue = 5
 
-    let [displayState, setDisplayState] = useState<number>(0)
-    let [disableInc, setDisable] = useState<boolean>(false)
-    let [disableReset, setDisableReset] = useState<boolean>(true)
+function App() {
+    const [displayState, setDisplayState] = useState<number>(minValue)
 
     const incCallBack = () => {
-        if (displayState < 5) {
-            displayState += 1
-            disableReset = false
-            setDisableReset(disableReset)
+        if (displayState < maxValue) {
+            setDisplayState(displayState + 1)
         }
-        if (displayState === 5) {
-            disableInc = true
-            setDisable(disableInc)
-        }
-        setDisplayState(displayState)
     }
 
     const resetCallBack = () => {
-        displayState = 0
-        setDisplayState(displayState)
-        disableInc = false
-        setDisable(disableInc)
-        disableReset = true
-        setDisableReset(disableReset)
+        setDisplayState(minValue)
     }
 
     return (
         <div className="App">
-            <Counter displayState={displayState} disableInc={disableInc} disableReset={disableReset}
+            <Counter displayValue={displayState} disabledInc={displayState === maxValue}
+                     disabledReset={displayState === minValue}
                      callBackCounter={incCallBack} resetCallBack={resetCallBack}/>
         </div>
-    );
+    )
 }
 
 export default App;
