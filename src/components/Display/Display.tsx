@@ -1,6 +1,6 @@
 import React from "react";
 import s from "./Display.module.css"
-import {maxValue} from "../../../App";
+import {maxValue} from "../../App";
 
 export type DisplayType = {
     value: number

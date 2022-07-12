@@ -1,6 +1,6 @@
 import React from "react";
-import {Display} from "./Display/Display";
-import {Button} from "./Button/Button";
+import {Display} from "../Display/Display";
+import {Button} from "../Button/Button";
 import s from "./Counter.module.css"
 
 type CounterType = {
